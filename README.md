@@ -1,3 +1,3 @@
 # THE srt.gay Site
 
-srt.gay
+<https://srt.gay>
