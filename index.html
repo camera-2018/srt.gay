@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRT网盘中转</title>
+</head>
+
+<body>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    body {
+      background-color: #1f2f3f;
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    button {
+      padding: 4vw 8vw;
+      border: none;
+      border-radius: 50vw;
+      background-color: #98F58E;
+      color: #000000;
+      font-size: 5vw;
+      font-weight: bold;
+      letter-spacing: 1vw;
+      cursor: pointer;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: ease-in-out 0.6s;
+    }
+
+    button:hover {
+      transform: rotateX(360deg);
+    }
+
+    button::before,
+    button::after {
+      content: "";
+      border: 0.8vw solid #fff;
+      border-radius: 50vw;
+      position: absolute;
+      top: 1vw;
+      left: 1vw;
+      right: 1vw;
+      bottom: 1vw;
+      transform-style: preserve-3d;
+      transform: perspective(1000vw) translateZ(5vw);
+    }
+
+    button::after {
+      transform: perspective(1000vw) translateZ(-5vw);
+    }
+
+    button span {
+      display: block;
+      transform-style: preserve-3d;
+      transform: perspective(500vw) translateZ(8vw);
+    }
+  </style>
+
+  <div class="container">
+    <button>
+      <span>跳转去SRT网盘</span>
+    </button>
+  </div>
+  <script>
+    const button = document.querySelector('button');
+
+    button.addEventListener('click', (event) => {
+      window.location.href = 'https://cloud.marlene.top/';
+    });
+
+  </script>
+
+</body>
+
+</html>
