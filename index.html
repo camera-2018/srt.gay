@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
   <title>SRT网盘中转</title>
 </head>
 
@@ -67,6 +68,18 @@
       transform-style: preserve-3d;
       transform: perspective(500vw) translateZ(8vw);
     }
+
+    #canvas-basic {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
   </style>
 
   <div class="container">
@@ -74,13 +87,37 @@
       <span>跳转去SRT网盘</span>
     </button>
   </div>
+  <canvas id="canvas-basic"></canvas>
+  <script src=" granim.min.js"></script>
   <script>
     const button = document.querySelector('button');
 
     button.addEventListener('click', (event) => {
       window.location.href = 'https://cloud.xyxsw.site/';
     });
-
+    var granimInstance = new Granim({
+      element: '#canvas-basic',
+      direction: 'radial',
+      isPausedWhenNotInView: true,
+      states: {
+        "default-state": {
+          gradients: [
+            ['#ff9966', '#ff5e62'],
+            ['#00F260', '#0575E6'],
+            ['#e1eec3', '#f05053'],
+            ['#04C4D9', '#F2B544'],
+            ['#03658C', '#F2E2CE'],
+            ['#F2C063', '#F2F0D8'],
+            ['#F2D8CE', '#8C4949'],
+            ['#A63F03', '#F2ADA7'],
+            ['#D94A4A', '#F2E9D8'],
+          ]
+        }
+      }
+    });
+  </script>
+  <script>
+    var rellax = new Rellax('.rellax');
   </script>
 
 </body>
